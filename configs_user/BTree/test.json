@@ -1,0 +1,17 @@
+{
+    "output_dir": "/optional/path/to/your/DPU-bench/experiments/BTree/Output",
+    
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "BTree",
+            "lmdb_mapsize": "",
+            "db_path": "/tmp/ycsb-lmdb",
+            "parameters": {
+                "num_records": [5000000],
+                "num_operations_per_thread": [16777216],
+                "num_threads": [0]
+            }
+        }
+    ]
+}

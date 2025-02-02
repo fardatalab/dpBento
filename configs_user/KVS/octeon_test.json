@@ -1,0 +1,27 @@
+{
+    "benchmarks": [
+        {
+            "benchmark_class": "KVS_Octeon",
+            "description": "Benchmarking for Key-Value store systems, for BF3",
+
+            "benchmark_items": ["rocksdb"],
+            "notes": "Rocksdb is the database being benchmarked",
+
+            "parameters": {
+                "operation_size": [100000],
+                "operation_size_description": "Operation sizes used for benchmarking",
+                
+                "operation_type": [[1, 0, 0, 0],
+                [0.5, 0.5, 0, 0]],
+                "operation_type_description": "Different operation in various proportions, 0->read, 1->update, 2->insert, 3-> scan",
+
+                "data_distribution_type": ["zipfian", "uniform"],
+                "data_distribution_type_description": "Different data distribution type",
+
+                "thread": [1, 8, 24],
+                "thread_description": "Number of threads"
+            },
+            "metrics": ["latency", "95latency", "throughput"]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "output_dir": "/optional/path/to/your/DPU-bench/experiments/storage_test/Output",
+    
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "GraphDB",
+            "parameters": {
+              "scale_factor": [0.1],
+              "num_threads": [0],
+              "queries_to_execute": ["1,2,3,4,5,6,7,8,9"],
+              "execution_mode": ["cold","hot"]
+            }
+        }
+    ]
+}

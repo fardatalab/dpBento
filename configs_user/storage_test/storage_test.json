@@ -1,0 +1,22 @@
+
+{
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "storage",
+            "benchmark_items": ["fio"],
+            "parameters": {
+                "numProc": [8],
+                "block_sizes": ["8k","32K","256K","1024K","4m"],
+                "size": ["1G"],
+                "runtime": ["30s"],
+                "direct": [0],
+                "iodepth": [1],
+                "io_engine": ["libaio"],
+                "test_lst": ["randread","randwrite","read", "write"],
+                "runtimes":[10]
+            },
+            "metrics": ["50 percentile", "bandwidth", "IOPS"]
+        }
+    ]
+}

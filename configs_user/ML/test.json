@@ -1,0 +1,15 @@
+{  
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "ml",
+            "benchmark_items": ["img_classificaiton"],
+            "parameters": {
+                "num_threads": [1, 2, 4, 8, 16],
+                "data_type": ["fp32", "int8"],
+                "img_size": ["640x480"]
+            },
+            "metrics": ["data_type", "ops/s"]
+        }
+    ]
+}

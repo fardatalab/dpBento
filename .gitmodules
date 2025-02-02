@@ -1,0 +1,6 @@
+[submodule "benchmarks/ml/DPU-bench-imagenet"]
+	path = benchmarks/ml/DPU-bench-imagenet
+	url = git@github.com:fardatalab/DPU-bench-imagenet.git
+[submodule "benchmarks/KVS/benchmarks/KVS/YCSB"]
+	path = benchmarks/KVS/benchmarks/KVS/YCSB
+	url = https://github.com/brianfrankcooper/YCSB.git

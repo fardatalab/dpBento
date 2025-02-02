@@ -1,0 +1,16 @@
+{
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "compression",
+            "benchmark_items": ["threaded-single", "single", "threading"],
+            "parameters": {
+                "operation": ["decompress"],
+                "data_size": ["1", "1K", "4K", "16K", "64K", "256K", "1M", "4M", "16M", "256M"],
+                "block_size": 1024,
+                "threads": -1
+            },
+            "metrics": ["latency"]
+        }
+    ]
+}

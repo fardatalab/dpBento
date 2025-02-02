@@ -1,0 +1,82 @@
+
+{
+    "benchmarks":
+    [        
+        {
+            "benchmark_class": "compute",
+            "benchmark_items": ["fp", "int"],
+            "parameters": {
+                "data_type": "int32,double,fp32"
+            },
+            "metrics": ["data_type", "op_type", "ops/s"]
+        },
+
+        {
+            "benchmark_class": "storage",
+            "benchmark_items": ["fio"],
+            "parameters": {
+                "numProc": [4],
+                "block_sizes": ["8k","32K","256K","1024K","4m"],
+                "size": ["1G"],
+                "runtime": ["10s"],
+                "direct": [1],
+                "iodepth": [4],
+                "io_engine": ["io_uring"],
+                "test_lst": ["randread","randwrite","read", "write"],
+                "runtimes":[3]
+            },
+            "metrics": ["50 percentile", "bandwidth", "IOPS"]
+        },
+
+        {
+            "benchmark_class": "hasing",
+            "benchmark_items": ["openssl speed"],
+            "parameters": {
+                "algorithm": ["aes-256-cbc"],
+                "seconds": [9],
+                "bytes": [2,8,32,128,512],
+                "multi": [4],
+                "async_jobs": [0],
+                "misalign": [0]
+            },
+            "metrics": ["throughput"]
+        },
+
+        {
+            "benchmark_class": "memory",
+            "benchmark_items": ["sysbench"],
+            "parameters": {
+                "memory-block-size": ["8k","32K","256K","1024K","4m"],
+                "memory-total-size": ["10G"],
+                "memory-oper": ["read", "write"],
+                "memory-access-mode": ["seq","rnd"],
+                "threads": [8],
+                "time": [30]
+            },
+            "metrics": ["latency", "bandwidth"]
+        },
+
+        {
+            "benchmark_class": "RDB",
+            "benchmark_items": ["duckdb"],
+            "parameters": {
+                "scale_factors": [1],
+                "query": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+                "execution_mode": ["cold", "hot"]
+            },
+            "metrics": ["run_time"]
+        },
+
+        {
+            "benchmark_class": "GraphDB",
+            "parameters": {
+              "scale_factor": [0.1],
+              "num_threads": [0],
+              "queries_to_execute": ["1,2,3,4,5,6,7,8,9"],
+              "execution_mode": ["cold","hot"]
+            }
+        }
+
+        
+    ]
+}

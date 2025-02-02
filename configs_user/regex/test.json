@@ -1,0 +1,13 @@
+
+{
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "regex",
+            "benchmark_items": ["simd", "threading"],
+            "parameters": {
+                "data_size": ["1", "1K", "4K", "16K", "64K", "256K", "1M", "4M", "16M", "256M"]
+            }
+        }
+    ]
+}

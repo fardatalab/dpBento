@@ -1,0 +1,19 @@
+
+{
+    "benchmarks":
+    [
+        {
+            "benchmark_class": "hashing",
+            "benchmark_items": ["openssl_speed", "doca_sha256"],
+            "parameters": {
+                "algorithm": ["sha256"],
+                "seconds": [1],
+                "bytes": [4, 4096],
+                "multi": [1],
+                "async_jobs": [0],
+                "misalign": [0]
+            },
+            "metrics": ["throughput"]
+        }
+    ]
+}
